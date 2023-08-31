@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LandmarRow: View {
+struct LandmarkRow: View {
     var landmark: Landmark
     var body: some View {
         HStack {
@@ -23,6 +23,13 @@ struct LandmarRow: View {
 
 struct LandmarRow_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarRow(landmark: landmarks[0])
+        Group {
+            LandmarkRow(landmark: landmarks[0])
+                .preferredColorScheme(.dark)
+                .previewDisplayName("test0")
+            LandmarkRow(landmark: landmarks[1])
+                .previewDisplayName("test1")
+        }
+            .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/300.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/))
     }
 }
