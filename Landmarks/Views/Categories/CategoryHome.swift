@@ -15,8 +15,9 @@ struct CategoryHome: View {
         NavigationView {
             List {
                 modelData.features[0].image
-                    .resizable()
-                    .scaledToFit()
+                    .resizable(resizingMode: .stretch)
+//                    .scaledToFit()
+                    .aspectRatio(contentMode: .fill)
                     .frame(height: 200)
                     .clipped()
                     .listRowInsets(EdgeInsets())
